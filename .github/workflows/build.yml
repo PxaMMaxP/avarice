@@ -1,5 +1,15 @@
 name: Build Binaries
-on: [push, pull_request]
+on:
+  workflow_dispatch:
+    # Optional: Eingabedefinitionen
+    inputs:
+      log_level:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      environment:
+        description: 'Environment name'
+        required: true
 
 jobs:
   build-win64:
